@@ -16,6 +16,10 @@ class User < ApplicationRecord
     Friendship.where("sender_id = ? OR recipient_id = ?", id, id).where(confirmed: false)
   end
 
+  def all_friendships
+    Friendship.where("sender_id = ? OR recipient_id = ?", id, id)
+  end
+
   # Will return all friends (other user, not the friendship)
   def friends
     collection = []
