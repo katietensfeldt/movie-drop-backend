@@ -46,6 +46,9 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
     if current_user == user
       user.delete
+      user.approved_friendships.destroy_all
+      user.pending_friendships.destroy_all
+      user.suggestions.destroy_all
       render json: {message: "User successfully destroyed"}
     else
       render json: {}, status: 401
