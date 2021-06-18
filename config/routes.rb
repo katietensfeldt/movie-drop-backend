@@ -14,4 +14,14 @@ Rails.application.routes.draw do
   post "/friendships" => "friendships#create"
   patch "/friendships/:id" => "friendships#update"
   delete "/friendships/:id" => "friendships#destroy"
+
+  ## Suggestions routes
+  get "/suggestions" => "suggestions#index"
+  post "/suggestions" => "suggestions#create"
+  patch "/suggestions/:id" => "suggestions#update"
+  delete "/suggestions/:id" => "suggestions#destroy"
+
+  ## Movies routes
+  get "/movies" => "movies#index"
+  get "/movies/:id" => "movies#show"
 end

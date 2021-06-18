@@ -25,9 +25,9 @@ class User < ApplicationRecord
     collection = []
     approved_friendships.each do |friendship|
       if friendship.sender_id == id
-        collection << friendship.recipient
+        collection << {id: friendship.recipient.id, name: friendship.recipient.name, username: friendship.recipient.username, image: friendship.recipient.image, email: friendship.recipient.email}
       else
-        collection << friendship.sender
+        collection << {id: friendship.sender.id, name: friendship.sender.name, username: friendship.sender.username, image: friendship.sender.image, email: friendship.sender.email}
       end
     end
     collection
