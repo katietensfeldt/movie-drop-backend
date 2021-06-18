@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
   ## Users routes
   get "/users" => "users#index"
-  post "/users" => "users#create"
+  post "/users" => "users#create"  # Sign up
   get "/users/:id" => "users#show"
   patch "/users/:id" => "users#update"
   delete "/users/:id" => "users#destroy"
 
-  ## Sessions routes
+  ## Sessions routes - log in
   post "/sessions" => "sessions#create"
 
   ## Friendships routes
@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   patch "/suggestions/:id" => "suggestions#update"
   delete "/suggestions/:id" => "suggestions#destroy"
 
-  ## Movies routes
+  ## Movies routes - makes calls to OMDB api
   get "/movies" => "movies#index"
   get "/movies/:id" => "movies#show"
 end
