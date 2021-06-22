@@ -2,9 +2,7 @@ class User < ApplicationRecord
   has_secure_password
   validates :email, presence: true, uniqueness: true
 
-  #These two below are not working because it can't associate the user_id
-  has_many :friendships
-  has_many :suggestions, foreign_key: "recipient_id"
+  has_many :suggestions, foreign_key: "recipient_id", dependent: :destroy
 
   # Will return all friendships where the friendship has been confirmed/approved
   def approved_friendships
@@ -16,6 +14,7 @@ class User < ApplicationRecord
     Friendship.where("sender_id = ? OR recipient_id = ?", id, id).where(confirmed: false)
   end
 
+  ## THIS IS JUST A TEMPORARY WORKAROUND - at this point, the :friendships association isn't working, this method is only to get a workaround temporarily
   def all_friendships
     Friendship.where("sender_id = ? OR recipient_id = ?", id, id)
   end
@@ -25,9 +24,9 @@ class User < ApplicationRecord
     collection = []
     approved_friendships.each do |friendship|
       if friendship.sender_id == id
-        collection << {id: friendship.recipient.id, name: friendship.recipient.name, username: friendship.recipient.username, image: friendship.recipient.image, email: friendship.recipient.email}
+        collection << friendship.recipient
       else
-        collection << {id: friendship.sender.id, name: friendship.sender.name, username: friendship.sender.username, image: friendship.sender.image, email: friendship.sender.email}
+        collection << friendship.sender
       end
     end
     collection

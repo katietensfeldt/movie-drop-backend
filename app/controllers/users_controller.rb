@@ -33,7 +33,7 @@ class UsersController < ApplicationController
       user.email = params[:email] || user.email
       user.image = params[:image] || user.image
       if user.save
-        render json: user
+        render json: user.as_json
       else
         render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
       end
@@ -47,7 +47,6 @@ class UsersController < ApplicationController
     if current_user == user
       user.delete
       user.all_friendships.destroy_all
-      user.suggestions.destroy_all
       render json: {message: "User successfully destroyed"}
     else
       render json: {}, status: 401
