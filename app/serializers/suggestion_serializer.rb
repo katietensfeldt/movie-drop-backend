@@ -1,6 +1,3 @@
 class SuggestionSerializer < ActiveModel::Serializer
-  attributes :id, :movie, :watched
-
-  belongs_to :sender
-  belongs_to :recipient
+  attributes :id, :movie, :watched, :sender, :recipient
 end

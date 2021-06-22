@@ -33,7 +33,7 @@ class UsersController < ApplicationController
       user.email = params[:email] || user.email
       user.image = params[:image] || user.image
       if user.save
-        render json: user.as_json
+        render json: user
       else
         render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
       end
