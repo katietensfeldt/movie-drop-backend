@@ -1,4 +1,5 @@
 class MoviesController < ApplicationController
+  before_action :authenticate_user
   def index
     # If user enters a movie title that is multiple words, the api will only work if we add '-' in between each word --- api does not like spaces
     movie_search = params[:movie]
