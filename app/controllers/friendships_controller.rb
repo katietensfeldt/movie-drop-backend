@@ -35,13 +35,9 @@ class FriendshipsController < ApplicationController
   end
 
   def destroy
-    friendship = Friendship.find(params[:id])
-    if current_user.all_friendships.include?(friendship)
-      friendship.delete
-      render json: {message: "Friendship successfully deleted"}
-    else
-      render json: {}, status: 401
-    end
+    friendship = current_user.all_friendships.find(params[:id])
+    friendship.delete
+    render json: {message: "Friendship successfully deleted"}
   end
 
 end

@@ -19,26 +19,18 @@ class SuggestionsController < ApplicationController
   end
 
   def update
-    suggestion = Suggestion.find(params[:id])
-    if current_user == suggestion.recipient
-      suggestion.watched = params[:watched] || suggestion.watched
-      if suggestion.save
-        render json: suggestion
-      else
-        render json: {errors: suggestion.errors.full_messages}, status: :bad_request
-      end
+    suggestion = current_user.suggestions.find(params[:id])
+    suggestion.watched = params[:watched] || suggestion.watched
+    if suggestion.save
+      render json: suggestion
     else
-      render json: {}, status: :unauthorized
+      render json: {errors: suggestion.errors.full_messages}, status: :bad_request
     end
   end
 
   def destroy
-    suggestion = Suggestion.find(params[:id])
-    if current_user == suggestion.recipient
-      suggestion.delete
-      render json: {message: "Suggestion successfully deleted"}
-    else
-      render json: {}, status: :unauthorized
-    end
+    suggestion = current_user.suggestions.find(params[:id])
+    suggestion.delete
+    render json: {message: "Suggestion successfully deleted"}
   end
 end
