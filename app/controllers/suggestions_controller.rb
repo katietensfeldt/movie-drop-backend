@@ -20,7 +20,7 @@ class SuggestionsController < ApplicationController
 
   def update
     suggestion = current_user.suggestions.find(params[:id])
-    suggestion.watched = params[:watched] || suggestion.watched
+    suggestion.watched = !suggestion.watched
     if suggestion.save
       render json: suggestion
     else
