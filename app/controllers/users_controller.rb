@@ -11,20 +11,22 @@ class UsersController < ApplicationController
       username: params[:username],
       image: params[:image],
       email: params[:email],
+      phone_number: params[:phone_number],
       password: params[:password],
       password_confirmation: params[:password_confirmation]
     )
     if user.save
-      client = Twilio::REST::Client.new(Rails.application.credentials.twilio_account_sid, Rails.application.credentials.twilio_auth_token)
-      from = "+19799852779"
-      to = '+14422973728'
+      if params[:phone_number]
+        client = Twilio::REST::Client.new(Rails.application.credentials.twilio_account_sid, Rails.application.credentials.twilio_auth_token)
+        from = "+1#{Rails.application.credentials.twilio_phone_number}"
+        to = "+1#{params[:phone_number]}"
 
-      client.messages.create(
-        from: from,
-        to: to,
-        body: "Welcome to Movie Drop"
-      )
-
+        client.messages.create(
+          from: from,
+          to: to,
+          body: "Hello! Welcome to Movie Drop. If you would like to stop receiving notifications, please delete your number from your user profile page. Happy dropping!"
+        )
+      end
       render json: { message: "User created successfully" }, status: :created
     else
       render json: { errors: user.errors.full_messages }, status: :bad_request
@@ -43,6 +45,7 @@ class UsersController < ApplicationController
       user.username = params[:username] || user.username
       user.email = params[:email] || user.email
       user.image = params[:image] || user.image
+      user.phone_number = params[:phone_number] || user.phone_number
       if user.save
         render json: user
       else
