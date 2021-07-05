@@ -13,6 +13,17 @@ class FriendshipsController < ApplicationController
       recipient_id: params[:recipient_id]
     )
     if friendship.save
+      if friendship.recipient.phone_number
+        client = Twilio::REST::Client.new(Rails.application.credentials.twilio_account_sid, Rails.application.credentials.twilio_auth_token)
+        from = "+1#{Rails.application.credentials.twilio_phone_number}"
+        to = "+1#{friendship.recipient.phone_number}"
+
+        client.messages.create(
+          from: from,
+          to: to,
+          body: "Hello from Movie Drop! You have received a friendship request! Check your account to see who it is."
+        )
+      end
       render json: friendship
     else
       render json: { errors: friendship.errors.full_messages }, status: :unprocessable_entity
@@ -25,6 +36,17 @@ class FriendshipsController < ApplicationController
     if friendship.recipient == current_user
       friendship.confirmed = params[:confirmed] || friendship.confirmed
       if friendship.save
+        if friendship.sender.phone_number
+          client = Twilio::REST::Client.new(Rails.application.credentials.twilio_account_sid, Rails.application.credentials.twilio_auth_token)
+          from = "+1#{Rails.application.credentials.twilio_phone_number}"
+          to = "+1#{friendship.sender.phone_number}"
+  
+          client.messages.create(
+            from: from,
+            to: to,
+            body: "Hello from Movie Drop! You have a newly confirmed friendship from #{friendship.recipient.username}. You may now send them movie suggestions."
+          )
+        end
         render json: friendship
       else
         render json: {errors: friendship.errors.full_messages }, status: :unprocessable_entity
