@@ -15,6 +15,16 @@ class UsersController < ApplicationController
       password_confirmation: params[:password_confirmation]
     )
     if user.save
+      client = Twilio::REST::Client.new(Rails.application.credentials.twilio_account_sid, Rails.application.credentials.twilio_auth_token)
+      from = "+19799852779"
+      to = '+14422973728'
+
+      client.messages.create(
+        from: from,
+        to: to,
+        body: "Welcome to Movie Drop"
+      )
+
       render json: { message: "User created successfully" }, status: :created
     else
       render json: { errors: user.errors.full_messages }, status: :bad_request
