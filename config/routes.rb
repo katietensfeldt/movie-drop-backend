@@ -24,4 +24,7 @@ Rails.application.routes.draw do
   ## Movies routes - makes calls to OMDB api
   get "/movies" => "movies#index"
   get "/movies/:id" => "movies#show"
+
+  ## Movies news routes - makes calls to NewsAPI
+  get "/movies_news" => "movies_news#index"
 end
