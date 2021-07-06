@@ -1,13 +1,5 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
-rapunzel = User.create(name: "Rapunzel", username: "rapunzel2011", email: "rapunzel@gmail.com", image: "https://static.wikia.nocookie.net/disney/images/a/ae/Profile_-_Rapunzel.jpeg/revision/latest/top-crop/width/360/height/360?cb=20190312015421", password: "password")
-snow_white = User.create(name: "Snow White", username: "apple-eater1938", email: "snowwhite@gmail.com", image: "https://static.wikia.nocookie.net/disneyheroines/images/e/e5/Snowy_White.jpg/revision/latest?cb=20111224025033", password: "password")
+rapunzel = User.create(name: "Rapunzel", username: "rapunzel2011", email: "rapunzel@gmail.com", image: "https://lumiere-a.akamaihd.net/v1/images/ct_rapunzel_upcportalreskin_20694_01be5a18.jpeg?region=0,0,330,330", password: "password")
+snow_white = User.create(name: "Snow White", username: "apple-eater1938", email: "snowwhite@gmail.com", image: "https://lumiere-a.akamaihd.net/v1/images/open-uri20150422-20810-10dy163_26bdf0e8.jpeg?region=0%2C0%2C600%2C600", password: "password")
 ariel = User.create(name: "Ariel", username: "mermaidhair89", email: "ariel@gmail.com", image: "https://lumiere-a.akamaihd.net/v1/images/image_c09181b9.jpeg?region=0,0,600,600", password: "password")
 tiana = User.create(name: "Tiana", username: "beignetqueen09", email: "tiana@gmail.com", image: "https://bckonline.com/wp-content/uploads/2018/09/Tiana-1-750x750.jpg", password: "password")
 cinderella = User.create(name: "Cinderella", username: "princesspumpkin55", email: "cinderella@gmail.com", image: "https://noguiltlife.com/wp-content/uploads/2019/06/cinderella-e1560445208596.jpeg", password: "password")
