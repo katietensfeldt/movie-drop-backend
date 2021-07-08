@@ -6,10 +6,12 @@ class UsersController < ApplicationController
   end
 
   def create
+    response = Cloudinary::Uploader.upload(params[:image], resource_type: :auto)
+    cloudinary_url = response["secure_url"]
     user = User.new(
       name: params[:name],
       username: params[:username],
-      image: params[:image],
+      image: cloudinary_url,
       email: params[:email],
       phone_number: params[:phone_number],
       password: params[:password],
@@ -27,7 +29,7 @@ class UsersController < ApplicationController
           body: "Hello! Welcome to Movie Drop. If you would like to stop receiving notifications, please delete your number from your user profile page. Happy dropping!"
         )
       end
-      render json: { message: "User created successfully" }, status: :created
+      render json: user, status: :created
     else
       render json: { errors: user.errors.full_messages }, status: :bad_request
     end
