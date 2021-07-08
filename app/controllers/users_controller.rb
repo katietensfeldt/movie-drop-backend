@@ -41,12 +41,17 @@ class UsersController < ApplicationController
   end
 
   def update
+   
     user = User.find(params[:id])
     if current_user == user
       user.name = params[:name] || user.name
       user.username = params[:username] || user.username
       user.email = params[:email] || user.email
-      user.image = params[:image] || user.image
+      if params[:image]
+        response = Cloudinary::Uploader.upload(params[:image], resource_type: :auto)
+        cloudinary_url = response["secure_url"]
+        user.image = cloudinary_url || user.image
+      end
       user.phone_number = params[:phone_number] || user.phone_number
       if user.save
         render json: user
