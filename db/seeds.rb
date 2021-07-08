@@ -4,6 +4,7 @@ ariel = User.create(name: "Ariel", username: "mermaidhair89", email: "ariel@gmai
 tiana = User.create(name: "Tiana", username: "beignetqueen09", email: "tiana@gmail.com", image: "https://bckonline.com/wp-content/uploads/2018/09/Tiana-1-750x750.jpg", password: "password")
 cinderella = User.create(name: "Cinderella", username: "princesspumpkin55", email: "cinderella@gmail.com", image: "https://noguiltlife.com/wp-content/uploads/2019/06/cinderella-e1560445208596.jpeg", password: "password")
 stitch = User.create(name: "Stitch", username: "troublemaker626", email: "stitch@gmail.com", image: "https://i.pinimg.com/originals/98/2b/29/982b29094dd09e127a8a9765cc718b75.png", password: "password")
+kuzco = User.create(name: "Emperor Kuzco", username: "llama-face", email: "kuzco@gmail.com", image: "https://res.cloudinary.com/depn6c2c3/image/upload/v1625772476/c7iupy6gptlhujzqwnbu.jpg", password: "password")
 
 Friendship.create(sender_id: rapunzel.id, recipient_id: snow_white.id, confirmed: true)
 Friendship.create(sender_id: rapunzel.id, recipient_id: ariel.id, confirmed: false)
