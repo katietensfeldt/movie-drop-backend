@@ -6,7 +6,10 @@ class UsersController < ApplicationController
   end
 
   def create
-    response = Cloudinary::Uploader.upload(params[:image], resource_type: :auto)
+    response = Cloudinary::Uploader.upload(params[:image], resource_type: :auto, :transformation=>[
+      {:gravity=>"center", :height=>500, :width=>500, :crop=>"thumb"},
+      {:width=>500, :crop=>"fill"}
+      ])
     cloudinary_url = response["secure_url"]
     user = User.new(
       name: params[:name],
@@ -48,7 +51,10 @@ class UsersController < ApplicationController
       user.username = params[:username] || user.username
       user.email = params[:email] || user.email
       if params[:image]
-        response = Cloudinary::Uploader.upload(params[:image], resource_type: :auto)
+        response = Cloudinary::Uploader.upload(params[:image], resource_type: :auto, :transformation=>[
+      {:gravity=>"center", :height=>500, :width=>500, :crop=>"thumb"},
+      {:width=>500, :crop=>"fill"}
+      ])
         cloudinary_url = response["secure_url"]
         user.image = cloudinary_url || user.image
       end
