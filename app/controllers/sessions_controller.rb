@@ -5,8 +5,7 @@ class SessionsController < ApplicationController
       jwt = JWT.encode(
         {
           user_id: user.id, # the data to encode
-          # No expiration time until later in development
-          # exp: 24.hours.from_now.to_i # the expiration time
+          exp: 24.hours.from_now.to_i # the expiration time
         },
         Rails.application.credentials.fetch(:secret_key_base), # the secret key
         "HS256" # the encryption algorithm
