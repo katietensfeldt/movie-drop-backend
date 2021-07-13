@@ -1,40 +1,123 @@
-rapunzel = User.create(name: "Rapunzel", username: "rapunzel2011", email: "rapunzel@gmail.com", image: "https://lumiere-a.akamaihd.net/v1/images/ct_rapunzel_upcportalreskin_20694_01be5a18.jpeg?region=0,0,330,330", password: "password")
-snow_white = User.create(name: "Snow White", username: "apple-eater1938", email: "snowwhite@gmail.com", image: "https://lumiere-a.akamaihd.net/v1/images/open-uri20150422-20810-10dy163_26bdf0e8.jpeg?region=0%2C0%2C600%2C600", password: "password")
-ariel = User.create(name: "Ariel", username: "mermaidhair89", email: "ariel@gmail.com", image: "https://lumiere-a.akamaihd.net/v1/images/image_c09181b9.jpeg?region=0,0,600,600", password: "password")
-tiana = User.create(name: "Tiana", username: "beignetqueen09", email: "tiana@gmail.com", image: "https://bckonline.com/wp-content/uploads/2018/09/Tiana-1-750x750.jpg", password: "password")
-cinderella = User.create(name: "Cinderella", username: "princesspumpkin55", email: "cinderella@gmail.com", image: "https://noguiltlife.com/wp-content/uploads/2019/06/cinderella-e1560445208596.jpeg", password: "password")
-stitch = User.create(name: "Stitch", username: "troublemaker626", email: "stitch@gmail.com", image: "https://i.pinimg.com/originals/98/2b/29/982b29094dd09e127a8a9765cc718b75.png", password: "password")
-kuzco = User.create(name: "Emperor Kuzco", username: "llama-face", email: "kuzco@gmail.com", image: "https://res.cloudinary.com/depn6c2c3/image/upload/v1625772476/c7iupy6gptlhujzqwnbu.jpg", password: "password")
+User.create!([
+  {name: "Kathleen Tensfeldt", username: "k10sfeldt", image: "https://res.cloudinary.com/depn6c2c3/image/upload/v1626125271/ucc1qxlz6qqvdc4yrdiz.jpg", email: "kmtensfeldt@gmail.com", password_digest: "$2a$12$2P30JbEujgLu5f0MXS1u0OuhfhxG2GTqSpMbldoY1L3vhCYD4c1GO", phone_number: nil},
+  {name: "Caroyln Thompson", username: "thompson-carolyn", image: "https://res.cloudinary.com/depn6c2c3/image/upload/v1626126536/kj0oobgwqfnnose714y6.png", email: "carolyn@hotmail.com", password_digest: "$2a$12$CuHOebw.is..9Z1bIrLFYe07tUNZm7gRK66UGWcIOmcB3EvP1xCRi", phone_number: nil},
+  {name: "Anamaria Jakubowski", username: "jakubowski_anamaria", image: "https://res.cloudinary.com/depn6c2c3/image/upload/v1626127159/wz7kcsikbvtajnjewtk9.png", email: "anamaria@gmail.com", password_digest: "$2a$12$iCTA5SBcuD3V2sWzTVbr/O3kJgfkiA7YUQbLRDbagMKIXkzSrOPOC", phone_number: nil},
+  {name: "Brain Dare", username: "dare-brian25", image: "https://res.cloudinary.com/depn6c2c3/image/upload/v1626126824/nxgsefme8djswnp4mvhw.png", email: "brian@hotmail.com", password_digest: "$2a$12$BJRm/WIvvKHs0..r58S1le58UWChuQedYwXMus9rEmGQceSHbL2/C", phone_number: nil},
+  {name: "Zachariah Parker", username: "zachariah-parker21", image: "https://res.cloudinary.com/depn6c2c3/image/upload/v1626126847/c9elac46g47q5j1vnzzl.png", email: "zachariah@hotmail.com", password_digest: "$2a$12$xwYa9NYhvadaPunpFdt1vONG5F0RQ1C6xXUDooTJNR5ofW87A8k1O", phone_number: nil},
+  {name: "Thad Renner", username: "thadius1", image: "https://res.cloudinary.com/depn6c2c3/image/upload/v1626126883/wsiofxe4ioadcszkyors.png", email: "thad@hotmail.com", password_digest: "$2a$12$KlUiPTrK2vU2fmodmVrlZ.QlrF4CgsUO/GNYWCWNM5N1h9szN/8u2", phone_number: nil},
+  {name: "Deandre Mertz", username: "mertz45", image: "https://res.cloudinary.com/depn6c2c3/image/upload/v1626126919/zn69esfq059f1aaf5kqx.png", email: "deandre@hotmail.com", password_digest: "$2a$12$sKa8tekfBydnrjXJqpJso.JoQi3Q4v15YbhdJwxyVZQBmRT3br/vW", phone_number: nil},
+  {name: "Renato Schoen", username: "schoen.renato", image: "https://res.cloudinary.com/depn6c2c3/image/upload/v1626126950/iixncspoqy1k0ucp8xr1.png", email: "renato@gmail.com", password_digest: "$2a$12$S5sVmj275700H84FsPnKke0XBK0nUXhIy/hiTRzLhmFtrJTDfCASq", phone_number: nil},
+  {name: "Madge Rippin", username: "rippin.madge", image: "https://res.cloudinary.com/depn6c2c3/image/upload/v1626126982/mm3kb2z0k9o5lncgra9w.png", email: "madge@hotmail.com", password_digest: "$2a$12$afrHw2vxrbyMSeY.eokXuukw727t09I7YVQQXPwgI41RHJxj8UIKe", phone_number: nil},
+  {name: "Marget Cole", username: "cole.kid", image: "https://res.cloudinary.com/depn6c2c3/image/upload/v1626127024/lhz9y9zq7klu03q0xsdx.png", email: "marget@gmail.com", password_digest: "$2a$12$zN39Q9of8CQagQu9J/LqQ.6dIOUURQDq2ZJ5xxAN4NwNZbNyGXtBe", phone_number: nil},
+  {name: "Silas Keeling", username: "silas.keeling", image: "https://res.cloudinary.com/depn6c2c3/image/upload/v1626127050/eeffu1mobv1kpxwy6jyk.png", email: "silas@gmail.com", password_digest: "$2a$12$G1EZwFZEKQFkhnWDYciEv.jHqyhZ6ZocOhQd3FO24f7985bKYZ04y", phone_number: nil},
+  {name: "Malik Nolan", username: "nolan.malik", image: "https://res.cloudinary.com/depn6c2c3/image/upload/v1626127078/ns5drufzdzp0wb9gmv4h.png", email: "malik@hotmail.com", password_digest: "$2a$12$ibhCacuZ1seRXQtUZHBEpOB/QOxaVrCbN5udTmiuwlJFtrRNy3j7K", phone_number: nil},
+  {name: "Lazaro McGlynn", username: "mcglynn_lazaro", image: "https://res.cloudinary.com/depn6c2c3/image/upload/v1626127104/kwyhxo5oehrjuldbs91s.png", email: "lazaro@gmail.com", password_digest: "$2a$12$YS.Ge4hJNFgr5jfw1ffu0.I8scXjpOxq7oyLrBy5/UjIlJ9D/nwd2", phone_number: nil},
+  {name: "Mickey Buckridge", username: "buckridge_mickey1313", image: "https://res.cloudinary.com/depn6c2c3/image/upload/v1626127123/swxqfzuh18sbcd4ynuom.png", email: "mickey@hotmail.com", password_digest: "$2a$12$4m9Rms8rp9NQ/.g2XC6N9uikKHBT0JVs3DmX3ZZe3D3n0Rk.sdgY2", phone_number: nil},
+  {name: "Camie Botsford", username: "camie_botsford", image: "https://res.cloudinary.com/depn6c2c3/image/upload/v1626127141/qke1xup7sepd43sdh1ie.png", email: "camie@gmail.com", password_digest: "$2a$12$7G1sBPDKTYHaeNgkLzu.GOK3AmyZIm/WvV5Hl0SdM4lfKPcq2yjYG", phone_number: nil},
+  {name: "Darrick Steuber", username: "steuber_darrick", image: "https://res.cloudinary.com/depn6c2c3/image/upload/v1626127179/mwqvlhli3scaapxvubq1.png", email: "darrick@gmail.com", password_digest: "$2a$12$37SRwuSpm9l7HsyR3adHReeCOH6TqbYxKT6MmG2NNyCMoK7azesvK", phone_number: nil}
+])
+Friendship.create!([
+  {sender_id: 16, recipient_id: 12, confirmed: true},
+  {sender_id: 16, recipient_id: 14, confirmed: true},
+  {sender_id: 16, recipient_id: 6, confirmed: true},
+  {sender_id: 16, recipient_id: 3, confirmed: true},
+  {sender_id: 16, recipient_id: 8, confirmed: true},
+  {sender_id: 16, recipient_id: 13, confirmed: true},
+  {sender_id: 16, recipient_id: 5, confirmed: true},
+  {sender_id: 1, recipient_id: 16, confirmed: false},
+  {sender_id: 2, recipient_id: 16, confirmed: false},
+  {sender_id: 14, recipient_id: 4, confirmed: false},
+  {sender_id: 14, recipient_id: 15, confirmed: false},
+  {sender_id: 15, recipient_id: 13, confirmed: true},
+  {sender_id: 15, recipient_id: 12, confirmed: true},
+  {sender_id: 16, recipient_id: 11, confirmed: true},
+  {sender_id: 14, recipient_id: 11, confirmed: true},
+  {sender_id: 15, recipient_id: 11, confirmed: true},
+  {sender_id: 13, recipient_id: 11, confirmed: true},
+  {sender_id: 11, recipient_id: 12, confirmed: false},
+  {sender_id: 11, recipient_id: 3, confirmed: false},
+  {sender_id: 12, recipient_id: 10, confirmed: true},
+  {sender_id: 13, recipient_id: 10, confirmed: true},
+  {sender_id: 10, recipient_id: 14, confirmed: false},
+  {sender_id: 15, recipient_id: 9, confirmed: true},
+  {sender_id: 13, recipient_id: 9, confirmed: true},
+  {sender_id: 12, recipient_id: 9, confirmed: true},
+  {sender_id: 9, recipient_id: 14, confirmed: false},
+  {sender_id: 9, recipient_id: 4, confirmed: false},
+  {sender_id: 9, recipient_id: 10, confirmed: false},
+  {sender_id: 15, recipient_id: 8, confirmed: true},
+  {sender_id: 12, recipient_id: 8, confirmed: true},
+  {sender_id: 9, recipient_id: 8, confirmed: true},
+  {sender_id: 8, recipient_id: 5, confirmed: false},
+  {sender_id: 8, recipient_id: 10, confirmed: false},
+  {sender_id: 13, recipient_id: 7, confirmed: true},
+  {sender_id: 11, recipient_id: 7, confirmed: true},
+  {sender_id: 9, recipient_id: 7, confirmed: true},
+  {sender_id: 8, recipient_id: 7, confirmed: true},
+  {sender_id: 7, recipient_id: 15, confirmed: false},
+  {sender_id: 14, recipient_id: 6, confirmed: true},
+  {sender_id: 13, recipient_id: 6, confirmed: true},
+  {sender_id: 10, recipient_id: 6, confirmed: true},
+  {sender_id: 6, recipient_id: 11, confirmed: false},
+  {sender_id: 6, recipient_id: 9, confirmed: false},
+  {sender_id: 15, recipient_id: 5, confirmed: true},
+  {sender_id: 13, recipient_id: 5, confirmed: true},
+  {sender_id: 10, recipient_id: 5, confirmed: true},
+  {sender_id: 5, recipient_id: 14, confirmed: false},
+  {sender_id: 5, recipient_id: 7, confirmed: false},
+  {sender_id: 5, recipient_id: 4, confirmed: true},
+  {sender_id: 6, recipient_id: 4, confirmed: true},
+  {sender_id: 7, recipient_id: 4, confirmed: true},
+  {sender_id: 12, recipient_id: 4, confirmed: true},
+  {sender_id: 13, recipient_id: 4, confirmed: true},
+  {sender_id: 10, recipient_id: 4, confirmed: true},
+  {sender_id: 4, recipient_id: 15, confirmed: false},
+  {sender_id: 5, recipient_id: 3, confirmed: true},
+  {sender_id: 10, recipient_id: 3, confirmed: true},
+  {sender_id: 7, recipient_id: 3, confirmed: true},
+  {sender_id: 6, recipient_id: 3, confirmed: true},
+  {sender_id: 12, recipient_id: 3, confirmed: true},
+  {sender_id: 14, recipient_id: 3, confirmed: true},
+  {sender_id: 3, recipient_id: 13, confirmed: false},
+  {sender_id: 15, recipient_id: 2, confirmed: true},
+  {sender_id: 4, recipient_id: 2, confirmed: true},
+  {sender_id: 11, recipient_id: 2, confirmed: true},
+  {sender_id: 2, recipient_id: 13, confirmed: false},
+  {sender_id: 2, recipient_id: 3, confirmed: false},
+  {sender_id: 2, recipient_id: 8, confirmed: false},
+  {sender_id: 14, recipient_id: 1, confirmed: true},
+  {sender_id: 12, recipient_id: 1, confirmed: true},
+  {sender_id: 8, recipient_id: 1, confirmed: true},
+  {sender_id: 6, recipient_id: 1, confirmed: true},
+  {sender_id: 1, recipient_id: 5, confirmed: false},
+  {sender_id: 1, recipient_id: 10, confirmed: false}
+])
+Suggestion.create!([
+  {omdb_api_id: "tt0068646", sender_id: 3, recipient_id: 16, watched: false},
+  {omdb_api_id: "tt0071562", sender_id: 3, recipient_id: 16, watched: false},
+  {omdb_api_id: "tt0137523", sender_id: 5, recipient_id: 16, watched: false},
+  {omdb_api_id: "tt0245429", sender_id: 6, recipient_id: 16, watched: false},
+  {omdb_api_id: "tt0110357", sender_id: 6, recipient_id: 16, watched: false},
+  {omdb_api_id: "tt0910970", sender_id: 6, recipient_id: 16, watched: false},
+  {omdb_api_id: "tt4154796", sender_id: 8, recipient_id: 16, watched: false},
+  {omdb_api_id: "tt0071853", sender_id: 13, recipient_id: 16, watched: false},
+  {omdb_api_id: "tt0445922", sender_id: 14, recipient_id: 16, watched: true},
+  {omdb_api_id: "tt8503618", sender_id: 8, recipient_id: 16, watched: true},
+  {omdb_api_id: "tt1375666", sender_id: 5, recipient_id: 16, watched: true},
+  {omdb_api_id: "tt0053291", sender_id: 13, recipient_id: 16, watched: true},
+  {omdb_api_id: "tt0082971", sender_id: 16, recipient_id: 12, watched: false},
+  {omdb_api_id: "tt0082971", sender_id: 16, recipient_id: 14, watched: false},
+  {omdb_api_id: "tt0082971", sender_id: 16, recipient_id: 6, watched: false},
+  {omdb_api_id: "tt0082971", sender_id: 16, recipient_id: 3, watched: false},
+  {omdb_api_id: "tt0082971", sender_id: 16, recipient_id: 8, watched: false},
+  {omdb_api_id: "tt0082971", sender_id: 16, recipient_id: 13, watched: false},
+  {omdb_api_id: "tt0082971", sender_id: 16, recipient_id: 5, watched: false},
+  {omdb_api_id: "tt0093779", sender_id: 16, recipient_id: 12, watched: false},
+  {omdb_api_id: "tt0093779", sender_id: 16, recipient_id: 14, watched: false},
+  {omdb_api_id: "tt0093779", sender_id: 16, recipient_id: 8, watched: false},
+  {omdb_api_id: "tt0093779", sender_id: 16, recipient_id: 13, watched: false},
+  {omdb_api_id: "tt0107290", sender_id: 16, recipient_id: 6, watched: false},
+  {omdb_api_id: "tt0107290", sender_id: 16, recipient_id: 8, watched: false},
+  {omdb_api_id: "tt0107290", sender_id: 16, recipient_id: 5, watched: false}
+])
 
-Friendship.create(sender_id: rapunzel.id, recipient_id: snow_white.id, confirmed: true)
-Friendship.create(sender_id: rapunzel.id, recipient_id: ariel.id, confirmed: false)
-Friendship.create(sender_id: tiana.id, recipient_id: rapunzel.id, confirmed: true)
-Friendship.create(sender_id: cinderella.id, recipient_id: rapunzel.id, confirmed: false)
-Friendship.create(sender_id: snow_white.id, recipient_id: ariel.id, confirmed: true)
-Friendship.create(sender_id: snow_white.id, recipient_id: tiana.id, confirmed: false)
-Friendship.create(sender_id: cinderella.id, recipient_id: snow_white.id, confirmed: true)
-Friendship.create(sender_id: ariel.id, recipient_id: tiana.id, confirmed: true)
-Friendship.create(sender_id: ariel.id, recipient_id: cinderella.id, confirmed: false)
-Friendship.create(sender_id: tiana.id, recipient_id: cinderella.id, confirmed: true)
-
-# princess and the frog
-Suggestion.create(omdb_api_id: "tt0780521", sender_id: tiana.id, recipient_id: rapunzel.id)
-Suggestion.create(omdb_api_id: "tt0780521", sender_id: tiana.id, recipient_id: ariel.id)
-Suggestion.create(omdb_api_id: "tt0780521", sender_id: tiana.id, recipient_id: cinderella.id)
-# snow white and the seven dwarves
-Suggestion.create(omdb_api_id: "tt0029583", sender_id: snow_white.id, recipient_id: rapunzel.id)
-Suggestion.create(omdb_api_id: "tt0029583", sender_id: snow_white.id, recipient_id: ariel.id)
-Suggestion.create(omdb_api_id: "tt0029583", sender_id: snow_white.id, recipient_id: cinderella.id)
-# tangled
-Suggestion.create(omdb_api_id: "tt0398286", sender_id: rapunzel.id, recipient_id: snow_white.id)
-Suggestion.create(omdb_api_id: "tt0398286", sender_id: rapunzel.id, recipient_id: tiana.id)
-# little mermaid
-Suggestion.create(omdb_api_id: "tt0097757", sender_id: ariel.id, recipient_id: snow_white.id)
-Suggestion.create(omdb_api_id: "tt0097757", sender_id: ariel.id, recipient_id: tiana.id)
-# cinderella
-Suggestion.create(omdb_api_id: "tt0042332", sender_id: cinderella.id, recipient_id: snow_white.id)
-Suggestion.create(omdb_api_id: "tt0042332", sender_id: cinderella.id, recipient_id: tiana.id)
-# emperor's new groove
-Suggestion.create(omdb_api_id: "tt0120917", sender_id: tiana.id, recipient_id: rapunzel.id)
-# lilo and stitch
-Suggestion.create(omdb_api_id: "tt0275847", sender_id: snow_white.id, recipient_id: rapunzel.id)

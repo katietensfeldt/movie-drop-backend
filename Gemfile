@@ -46,3 +46,7 @@ gem 'active_model_serializers'
 gem 'twilio-ruby'
 
 gem 'cloudinary'
+
+gem 'faker'
+
+gem 'seed_dump'
