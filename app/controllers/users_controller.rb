@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user, except: :create
   def index
-    users = User.all
+    users = User.where("username LIKE ?", "%#{params[:search]}%")
     render json: users
   end
 
