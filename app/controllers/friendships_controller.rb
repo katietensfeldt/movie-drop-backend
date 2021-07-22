@@ -16,7 +16,7 @@ class FriendshipsController < ApplicationController
       if friendship.recipient.phone_number
         client = Twilio::REST::Client.new(Rails.application.credentials.twilio_account_sid, Rails.application.credentials.twilio_auth_token)
         from = "+1#{Rails.application.credentials.twilio_phone_number}"
-        to = "+1#{friendship.recipient.phone_number}"
+        to = "#{friendship.recipient.phone_number}"
 
         client.messages.create(
           from: from,
